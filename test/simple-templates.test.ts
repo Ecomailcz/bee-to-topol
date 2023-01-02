@@ -1,8 +1,8 @@
 import {expect, test, vi} from "vitest";
 import convertor from "../src/convertor";
-import simpleTemplate1 from '../src/bee-templates/simple-templates/simple-template.json';
-import simpleTemplateWithButton from '../src/bee-templates/simple-templates/simple-template-with-button.json';
-import simpleTemplateWithTwoButtons from '../src/bee-templates/simple-templates/simple-template-with-two-buttons.json';
+import simpleTemplate1 from './testing-bee-templates/simple-templates/simple-template.json';
+import simpleTemplateWithButton from './testing-bee-templates/simple-templates/simple-template-with-button.json';
+import simpleTemplateWithTwoButtons from './testing-bee-templates/simple-templates/simple-template-with-two-buttons.json';
 
 vi.mock('uuid', () => {
     return {

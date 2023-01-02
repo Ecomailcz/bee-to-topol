@@ -1,11 +1,11 @@
 import {expect, test, vi} from "vitest";
 import convertor from "../src/convertor";
-import template1 from '../src/bee-templates/full-templates/1.json';
-import july from '../src/bee-templates/full-templates/4th-of-july-2.json';
-import hoursOnly from '../src/bee-templates/full-templates/24-hours-only.json';
-import review2020 from '../src/bee-templates/full-templates/2020-in-review.json';
-import dadGift from '../src/bee-templates/full-templates/a-gift-daddy-will-love.json';
-import momGift from '../src/bee-templates/full-templates/a-gift-for-mom-a-gift-for-you.json';
+import template1 from './testing-bee-templates/full-templates/1.json';
+import july from './testing-bee-templates/full-templates/4th-of-july-2.json';
+import hoursOnly from './testing-bee-templates/full-templates/24-hours-only.json';
+import review2020 from './testing-bee-templates/full-templates/2020-in-review.json';
+import dadGift from './testing-bee-templates/full-templates/a-gift-daddy-will-love.json';
+import momGift from './testing-bee-templates/full-templates/a-gift-for-mom-a-gift-for-you.json';
 
 vi.mock('uuid', () => {
     return {
