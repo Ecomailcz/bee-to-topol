@@ -1,0 +1,23 @@
+{
+  "name": "bee-to-topol",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "convert": "npx tsc && node build/index.js",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "author": "Ecomail.cz",
+  "license": "GNU GPL 3",
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@types/uuid": "^9.0.0",
+    "@vitest/coverage-c8": "^0.26.2",
+    "typescript": "^4.9.4",
+    "vitest": "^0.26.2"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}
