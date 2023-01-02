@@ -73,3 +73,6 @@ if (fs.existsSync(beePath)) {
 } else {
     console.error("Unable to find directory: " + beePath);
 }
+
+
+//some dumb test
