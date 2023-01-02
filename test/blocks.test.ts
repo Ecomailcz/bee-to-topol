@@ -1,12 +1,12 @@
 import { assert, expect, test, vi } from 'vitest'
-import buttonTemplate from "../src/bee-templates/separated-blocks/button.json";
-import dividerTemplate from "../src/bee-templates/separated-blocks/divider.json";
-import gifTemplate from "../src/bee-templates/separated-blocks/gif.json";
-import imageTemplate from "../src/bee-templates/separated-blocks/image.json";
-// import textTemplate from "../src/bee-templates/separated-blocks/text.json";
-import videoTemplate from "../src/bee-templates/separated-blocks/video.json";
-import socialTemplate from "../src/bee-templates/separated-blocks/social.json";
-import spacerTemplate from "../src/bee-templates/separated-blocks/spacer.json";
+import buttonTemplate from "./testing-bee-templates/separated-blocks/button.json";
+import dividerTemplate from "./testing-bee-templates/separated-blocks/divider.json";
+import gifTemplate from "./testing-bee-templates/separated-blocks/gif.json";
+import imageTemplate from "./testing-bee-templates/separated-blocks/image.json";
+// import textTemplate from "./testing-bee-templates/separated-blocks/text.json";
+import videoTemplate from "./testing-bee-templates/separated-blocks/video.json";
+import socialTemplate from "./testing-bee-templates/separated-blocks/social.json";
+import spacerTemplate from "./testing-bee-templates/separated-blocks/spacer.json";
 
 import convertor from "../src/convertor";
 // Edit an assertion and save to see HMR in action
