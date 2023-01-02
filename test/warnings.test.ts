@@ -1,6 +1,6 @@
 import {expect, test, vi} from "vitest";
 import convertor from "../src/convertor";
-import template1 from '../src/bee-templates/full-templates/1.json';
+import template1 from './testing-bee-templates/full-templates/1.json';
 
 vi.mock('uuid', () => {
     return {

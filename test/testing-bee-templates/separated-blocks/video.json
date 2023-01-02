@@ -1,0 +1,304 @@
+{
+  "page": {
+    "body": {
+      "container": {
+        "style": {
+          "background-color": "#d01717",
+          "background-image": "none",
+          "background-position": "top left",
+          "background-repeat": "no-repeat",
+          "background-size": "auto"
+        }
+      },
+      "content": {
+        "computedStyle": {
+          "align": "center",
+          "linkColor": "#296eab",
+          "messageBackgroundColor": "#6f2e2e",
+          "messageWidth": "645px"
+        },
+        "style": {
+          "color": "#000000",
+          "font-family": "TimesNewRoman, Times New Roman, Times, Beskerville, Georgia, serif"
+        }
+      },
+      "type": "mailup-bee-page-properties",
+      "webFonts": [
+        {
+          "fontFamily": "'Roboto', Tahoma, Verdana, Segoe, sans-serif",
+          "name": "Roboto",
+          "url": "https://fonts.googleapis.com/css?family=Roboto"
+        },
+        {
+          "fontFamily": "'Abril Fatface', Arial, 'Helvetica Neue', Helvetica, sans-serif",
+          "name": "Abril Fatface",
+          "url": "https://fonts.googleapis.com/css?family=Abril+Fatface"
+        },
+        {
+          "fontFamily": "'Merriwheater', 'Georgia', serif",
+          "name": "Merriwheater",
+          "url": "https://fonts.googleapis.com/css?family=Merriweather"
+        },
+        {
+          "fontFamily": "'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif",
+          "name": "Montserrat",
+          "url": "https://fonts.googleapis.com/css?family=Montserrat"
+        },
+        {
+          "fontFamily": "'Nunito', Arial, 'Helvetica Neue', Helvetica, sans-serif",
+          "name": "Nunito",
+          "url": "https://fonts.googleapis.com/css?family=Nunito"
+        },
+        {
+          "fontFamily": "'Bitter', Georgia, Times, 'Times New Roman', serif",
+          "name": "Bitter",
+          "url": "https://fonts.googleapis.com/css?family=Bitter"
+        },
+        {
+          "fontFamily": "'Permanent Marker', Impact, Charcoal, sans-serif",
+          "name": "Permanent Marker",
+          "url": "https://fonts.googleapis.com/css?family=Permanent+Marker"
+        },
+        {
+          "fontFamily": "'Roboto Slab', Arial, 'Helvetica Neue', Helvetica, sans-serif",
+          "name": "Roboto Slab",
+          "url": "https://fonts.googleapis.com/css?family=Roboto+Slab"
+        },
+        {
+          "fontFamily": "'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif",
+          "name": "Cabin",
+          "url": "https://fonts.googleapis.com/css?family=Cabin"
+        },
+        {
+          "fontFamily": "'Oxygen', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif",
+          "name": "Oxygen",
+          "url": "https://fonts.googleapis.com/css?family=Oxygen"
+        },
+        {
+          "fontFamily": "'Oswald', Arial, 'Helvetica Neue', Helvetica, sans-serif",
+          "name": "Oswald",
+          "url": "https://fonts.googleapis.com/css?family=Oswald"
+        },
+        {
+          "family": "'Lato', Tahoma, Verdana, Segoe, sans-serif",
+          "fontFamily": "'Lato', Tahoma, Verdana, Segoe, sans-serif",
+          "fontName": "Lato",
+          "name": "Lato",
+          "url": "https://fonts.googleapis.com/css?family=Lato"
+        },
+        {
+          "family": "'Ubuntu', Tahoma, Verdana, Segoe, sans-serif",
+          "fontFamily": "'Ubuntu', Tahoma, Verdana, Segoe, sans-serif",
+          "fontName": "Ubuntu",
+          "name": "Ubuntu",
+          "url": "https://fonts.googleapis.com/css?family=Ubuntu"
+        },
+        {
+          "fontFamily": "'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+          "name": "Open Sans",
+          "url": "https://fonts.googleapis.com/css?family=Open+Sans"
+        },
+        {
+          "fontFamily": "'Droid Serif', Georgia, Times, 'Times New Roman', serif",
+          "name": "Droid Serif",
+          "url": "https://fonts.googleapis.com/css?family=Droid+Serif"
+        },
+        {
+          "fontFamily": "'Playfair Display', Georgia, serif",
+          "name": "Playfair Display",
+          "url": "https://fonts.googleapis.com/css?family=Playfair+Display"
+        },
+        {
+          "fontFamily": "'Poppins', Arial, Helvetica, sans-serif",
+          "name": "Poppins",
+          "url": "https://fonts.googleapis.com/css?family=Poppins"
+        }
+      ]
+    },
+    "description": "",
+    "rows": [
+      {
+        "container": {
+          "style": {
+            "background-color": "transparent",
+            "background-image": "none",
+            "background-repeat": "no-repeat",
+            "background-position": "top left"
+          }
+        },
+        "content": {
+          "style": {
+            "background-color": "#6f2e2e",
+            "color": "#000000",
+            "width": "500px",
+            "background-image": "none",
+            "background-repeat": "no-repeat",
+            "background-position": "top left",
+            "border-top": "0px solid transparent",
+            "border-right": "0px solid transparent",
+            "border-bottom": "0px solid transparent",
+            "border-left": "0px solid transparent",
+            "border-radius": "0px"
+          },
+          "computedStyle": {
+            "rowColStackOnMobile": true,
+            "rowReverseColStackOnMobile": false,
+            "verticalAlign": "top",
+            "hideContentOnMobile": false,
+            "hideContentOnDesktop": false
+          }
+        },
+        "columns": [
+          {
+            "style": {
+              "background-color": "transparent",
+              "border-bottom": "0px solid transparent",
+              "border-left": "0px solid transparent",
+              "border-right": "0px solid transparent",
+              "border-top": "0px solid transparent",
+              "padding-bottom": "5px",
+              "padding-left": "0px",
+              "padding-right": "0px",
+              "padding-top": "5px"
+            },
+            "modules": [
+              {
+                "type": "mailup-bee-newsletter-modules-video",
+                "descriptor": {
+                  "video": {
+                    "src": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    "thumbSrc": "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+                    "thumbRatio": "16-9",
+                    "iconSrc": "https://app-rsrc.getbee.io/public/resources/components/widgetBar/video-content-icon-sets/dark/type-02.png",
+                    "iconType": 2,
+                    "iconSize": 60,
+                    "iconColor1": "#000000",
+                    "iconColor2": "#ffffff",
+                    "mode": "thumbnail",
+                    "thumbAlt": "Rick Astley - Never Gonna Give You Up (Official Music Video)"
+                  },
+                  "style": {
+                    "width": "100%",
+                    "padding-top": "10px",
+                    "padding-right": "10px",
+                    "padding-bottom": "10px",
+                    "padding-left": "10px"
+                  },
+                  "computedStyle": {
+                    "class": "center",
+                    "width": "100%",
+                    "hideContentOnMobile": false
+                  },
+                  "mobileStyle": {}
+                },
+                "uuid": "6ceffde4-da4c-4043-8491-99866f2a51c3"
+              }
+            ],
+            "grid-columns": 12,
+            "uuid": "a181e90d-a535-43f1-9557-c5ad8c3e69eb"
+          }
+        ],
+        "type": "one-column-empty",
+        "uuid": "5ce999af-2699-43f9-b50e-a26d2dda28ab"
+      },
+      {
+        "columns": [
+          {
+            "grid-columns": 12,
+            "modules": [
+              {
+                "descriptor": {
+                  "computedStyle": {
+                    "hideContentOnDesktop": false,
+                    "hideContentOnMobile": false,
+                    "iconHeight": "32px",
+                    "iconSpacing": {
+                      "padding-bottom": "5px",
+                      "padding-left": "5px",
+                      "padding-right": "6px",
+                      "padding-top": "5px"
+                    },
+                    "itemSpacing": "0px",
+                    "itemsSpacing": "0px"
+                  },
+                  "iconsList": {
+                    "icons": [
+                      {
+                        "alt": "Designed with BEE",
+                        "height": "303px",
+                        "href": "https://www.designedwithbee.com/",
+                        "image": "https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/53601_510656/Signature/bee.png",
+                        "target": "_blank",
+                        "text": "Designed with BEE",
+                        "textPosition": "right",
+                        "title": "Designed with BEE",
+                        "width": "325px"
+                      }
+                    ]
+                  },
+                  "style": {
+                    "color": "#9d9d9d",
+                    "font-family": "inherit",
+                    "font-size": "15px",
+                    "padding-bottom": "5px",
+                    "padding-left": "0px",
+                    "padding-right": "0px",
+                    "padding-top": "5px",
+                    "text-align": "center"
+                  }
+                },
+                "locked": true,
+                "type": "mailup-bee-newsletter-modules-icons",
+                "uuid": "02aff5de-a889-4c69-8747-c33b24d151a6"
+              }
+            ],
+            "style": {
+              "background-color": "transparent",
+              "border-bottom": "0px solid transparent",
+              "border-left": "0px solid transparent",
+              "border-right": "0px solid transparent",
+              "border-top": "0px solid transparent",
+              "padding-bottom": "5px",
+              "padding-left": "0px",
+              "padding-right": "0px",
+              "padding-top": "5px"
+            },
+            "uuid": "e5c20607-c435-4d07-bfe0-48502ae12077"
+          }
+        ],
+        "container": {
+          "style": {
+            "background-color": "transparent",
+            "background-image": "none",
+            "background-position": "top left",
+            "background-repeat": "no-repeat"
+          }
+        },
+        "content": {
+          "computedStyle": {
+            "hideContentOnDesktop": false,
+            "hideContentOnMobile": false,
+            "rowColStackOnMobile": true
+          },
+          "style": {
+            "background-color": "#6f2e2e",
+            "background-image": "none",
+            "background-position": "top left",
+            "background-repeat": "no-repeat",
+            "color": "#000000",
+            "width": "645px"
+          }
+        },
+        "locked": true,
+        "type": "one-column-empty",
+        "uuid": "d406e8d1-8e9f-4328-b538-b9c98228f8a3"
+      }
+    ],
+    "template": {
+      "name": "template-base",
+      "type": "basic",
+      "version": "2.0.0"
+    },
+    "title": ""
+  }
+}
