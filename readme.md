@@ -1,4 +1,4 @@
-# Topol to BEE templates convertor
+# BEE to Topol templates convertor
 
 ## Supported BEE modules
 
