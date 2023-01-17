@@ -87,24 +87,34 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
         });
 
         const getCssClass = () => {
+            if (!row.content.computedStyle) {
+                return undefined;
+            }
+
             if (row.content.computedStyle.hideContentOnDesktop) {
                 return "hide_section_on_desktop";
             }
             if (row.content.computedStyle.hideContentOnMobile) {
                 return "hide_section_on_mobile";
-            }
+            }  
 
             return undefined;
         }
 
         const getBackgroundUrl = () => {
 
-            const rowStyleBgImage = row.content.style["background-image"]
+            if(row.content.style["background-image"]){
+                const rowStyleBgImage = row.content.style["background-image"]
                 .replace("url('", "")
                 .replace("')", "");
 
-            if (rowStyleBgImage !== "none") {
-                return rowStyleBgImage;
+                if (rowStyleBgImage !== "none") {
+                    return rowStyleBgImage;
+                }   
+            }
+
+            if(!row.container.style["background-image"]){
+                return 'none';
             }
 
             return row.container.style["background-image"]
@@ -135,7 +145,7 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
                 // @ts-expect-error
                 "background-size": row.content.style["background-size"],
                 "background-repeat": row.content.style["background-repeat"],
-                "in-group": !row.content.computedStyle.rowColStackOnMobile
+                "in-group": row.content.computedStyle && !row.content.computedStyle.rowColStackOnMobile
             },
             children: columns,
             layout: 1,

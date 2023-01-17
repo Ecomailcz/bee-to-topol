@@ -23,7 +23,7 @@ export const convertBlock = (beeBlock: Module, columnWidth: number): { block: To
             block = convertTextBlock(beeBlock);
             break;
         case 'mailup-bee-newsletter-modules-heading':
-            block = convertTextBlock(beeBlock);
+            block = convertHeadingBlock(beeBlock);
             break;
         case 'mailup-bee-newsletter-modules-button':
             block = convertButtonBlock(beeBlock);
@@ -70,6 +70,10 @@ export const convertBlock = (beeBlock: Module, columnWidth: number): { block: To
 type responsiveClass = "hide_on_desktop" | "hide_on_mobile" | undefined;
 
 const resolveResponsiveCssClass = (beeBlock: Module): responsiveClass => {
+    if(!beeBlock.descriptor.computedStyle){
+        return undefined;
+    }
+
     if (beeBlock.descriptor.computedStyle.hideContentOnDesktop) {
         return "hide_on_desktop";
     }
@@ -95,6 +99,24 @@ const convertTextBlock = (beeBlock: Module): TopolTextBlock => {
         uid: uuidv4()
     }
 }
+
+const convertHeadingBlock = (beeBlock: Module): TopolTextBlock => {
+    return {
+        tagName: "mj-text",
+        attributes: {
+            align: "left",
+            padding: `${beeBlock.descriptor.style["padding-top"]} ${beeBlock.descriptor.style["padding-right"]} ${beeBlock.descriptor.style["padding-bottom"]} ${beeBlock.descriptor.style["padding-left"]}`,
+            // @ts-ignore missing proper Text Types...
+            "line-height": beeBlock.descriptor.heading.style['line-height'] || 1,
+            containerWidth: COLUMN_WIDTH,
+            "css-class": resolveResponsiveCssClass(beeBlock),
+        },
+        // @ts-ignore missing proper Text Types...
+        content: `<div style="color:${beeBlock.descriptor.heading.style.color};">${beeBlock.descriptor.heading.text}</div>` || "",
+        uid: uuidv4()
+    }
+}
+
 
 const convertButtonBlock = (beeBlock: Module): TopolButtonBlock => {
     return {
