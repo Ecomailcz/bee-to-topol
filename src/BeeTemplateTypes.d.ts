@@ -125,6 +125,7 @@ export interface Row {
             rowColStackOnMobile: boolean;
         };
         style: {
+            "background-size"?: string;
             "background-color": string;
             "background-image": string;
             "background-position": string;
