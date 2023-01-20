@@ -9,3 +9,7 @@ export const convertFonts = (beeFonts: WebFont[]): string[] => {
 export const stringWithPxToNumeric = (str: string): number => {
     return parseInt(str.replace("px", ""));
 }
+
+export const lineHeightPercentToNumeric = (str: string): number => {
+    return parseInt(str.replace("%", "")) / 100;
+}

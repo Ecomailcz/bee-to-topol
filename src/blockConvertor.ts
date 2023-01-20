@@ -8,6 +8,7 @@ import {
 } from "./TopolTemplateTypes";
 import {BeeSocialIcon, Module} from "./BeeTemplateTypes";
 import {v4 as uuidv4} from 'uuid';
+import { lineHeightPercentToNumeric } from "./helpers";
 
 let COLUMN_WIDTH = 600;
 
@@ -24,6 +25,9 @@ export const convertBlock = (beeBlock: Module, columnWidth: number): { block: To
             break;
         case 'mailup-bee-newsletter-modules-heading':
             block = convertHeadingBlock(beeBlock);
+            break;
+        case 'mailup-bee-newsletter-modules-paragraph':
+            block = convertParagraphBlock(beeBlock);
             break;
         case 'mailup-bee-newsletter-modules-button':
             block = convertButtonBlock(beeBlock);
@@ -48,7 +52,7 @@ export const convertBlock = (beeBlock: Module, columnWidth: number): { block: To
             break;
         // gif is represented as image addon
         case 'mailup-bee-newsletter-modules-addon':
-            // @ts-ignore
+            // @ts-expect-error
             if (beeBlock.contentType === "image") {
                 block = convertGifBlock(beeBlock);
             }
@@ -56,13 +60,12 @@ export const convertBlock = (beeBlock: Module, columnWidth: number): { block: To
         default:
             notConvertedBlock = beeBlock;
             break;
-
     }
 
     return {
-        //@ts-ignore
+        //@ts-expect-error
         block: block,
-        //@ts-ignore
+        //@ts-expect-error
         notConvertedBlock: notConvertedBlock
     }
 }
@@ -89,30 +92,150 @@ const convertTextBlock = (beeBlock: Module): TopolTextBlock => {
         attributes: {
             align: "left",
             padding: `${beeBlock.descriptor.style["padding-top"]} ${beeBlock.descriptor.style["padding-right"]} ${beeBlock.descriptor.style["padding-bottom"]} ${beeBlock.descriptor.style["padding-left"]}`,
-            // @ts-ignore missing proper Text Types...
-            "line-height": beeBlock.descriptor.text.style['line-height'] || 1,
+            // @ts-expect-error missing proper Text Types...
+            "line-height": lineHeightPercentToNumeric(beeBlock.descriptor.text.style['line-height']) || 1,
             containerWidth: COLUMN_WIDTH,
             "css-class": resolveResponsiveCssClass(beeBlock),
         },
-        // @ts-ignore missing proper Text Types...
+        // @ts-expect-error missing proper Text Types...
         content: `<div style="color:${beeBlock.descriptor.text.style.color};">${beeBlock.descriptor.text.html}</div>` || "",
         uid: uuidv4()
     }
 }
 
 const convertHeadingBlock = (beeBlock: Module): TopolTextBlock => {
+
+
+    function composeStyles() {
+
+        let styles = '';
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.heading.style.color) {
+            //@ts-expect-error
+            styles += `color:${beeBlock.descriptor.heading.style.color};`;
+        }
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.heading.style['font-size']) {
+            //@ts-expect-error
+            styles += `font-size:${beeBlock.descriptor.heading.style['font-size']};`;
+        }
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.heading.style['font-family']) {
+            //@ts-expect-error
+            styles += `font-family:${beeBlock.descriptor.heading.style['font-family']};`;
+        }
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.heading.style['font-weight']) {
+            //@ts-expect-error
+            styles += `font-weight:${beeBlock.descriptor.heading.style['font-weight']};`;
+        }
+
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.heading.style['text-align']) {
+            //@ts-expect-error
+            styles += `text-align:${beeBlock.descriptor.heading.style['text-align']};`;
+        }
+
+        console.log(styles);
+        
+
+       return styles;    
+    }
+
+
+    function createContent() {
+        //@ts-expect-error
+        if(beeBlock.descriptor.heading.text) {
+            //@ts-expect-error
+            return `<p><span style="${composeStyles()}">${beeBlock.descriptor.heading.text }</span></p>`
+        }
+    
+        return ""
+    }
+
     return {
         tagName: "mj-text",
         attributes: {
             align: "left",
             padding: `${beeBlock.descriptor.style["padding-top"]} ${beeBlock.descriptor.style["padding-right"]} ${beeBlock.descriptor.style["padding-bottom"]} ${beeBlock.descriptor.style["padding-left"]}`,
-            // @ts-ignore missing proper Text Types...
-            "line-height": beeBlock.descriptor.heading.style['line-height'] || 1,
+            // @ts-expect-error missing proper Text Types...
+            "line-height": lineHeightPercentToNumeric(beeBlock.descriptor.heading.style['line-height']) || 1,
             containerWidth: COLUMN_WIDTH,
             "css-class": resolveResponsiveCssClass(beeBlock),
         },
-        // @ts-ignore missing proper Text Types...
-        content: `<div style="color:${beeBlock.descriptor.heading.style.color};">${beeBlock.descriptor.heading.text}</div>` || "",
+        content: createContent(),
+        uid: uuidv4()
+    }
+}
+
+const convertParagraphBlock = (beeBlock: Module): TopolTextBlock => {
+
+
+    function composeStyles() {
+
+        let styles = '';
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.paragraph.style.color) {
+            //@ts-expect-error
+            styles += `color:${beeBlock.descriptor.paragraph.style.color};`;
+        }
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.paragraph.style['font-size']) {
+            //@ts-expect-error
+            styles += `font-size:${beeBlock.descriptor.paragraph.style['font-size']};`;
+        }
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.paragraph.style['font-family']) {
+            //@ts-expect-error
+            styles += `font-family:"${beeBlock.descriptor.paragraph.style['font-family']}";`;
+        }
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.paragraph.style['font-weight']) {
+            //@ts-expect-error
+            styles += `font-weight:${beeBlock.descriptor.paragraph.style['font-weight']};`;
+        }
+
+
+        //@ts-expect-error
+        if(beeBlock.descriptor.paragraph.style['text-align']) {
+            //@ts-expect-error
+            styles += `text-align:${beeBlock.descriptor.paragraph.style['text-align']};`;
+        }
+
+       return styles;    
+    }
+
+    function createContent() {
+        //@ts-expect-error
+        if(beeBlock.descriptor.paragraph.html) {
+            //@ts-expect-error
+            const replacedParagraphTag = beeBlock.descriptor.paragraph.html.replace(/<p>/g, "<span>").replace(/<\/p>/g, "</span>");            
+            return `<p><span style="${composeStyles()}">${replacedParagraphTag}</span></p>` || ""
+        }
+
+        return "";
+    }
+
+    return {
+        tagName: "mj-text",
+        attributes: {
+            align: "left",
+            padding: `${beeBlock.descriptor.style["padding-top"]} ${beeBlock.descriptor.style["padding-right"]} ${beeBlock.descriptor.style["padding-bottom"]} ${beeBlock.descriptor.style["padding-left"]}`,
+            // @ts-expect-error missing proper Text Types...
+            "line-height": lineHeightPercentToNumeric(beeBlock.descriptor.paragraph.style['line-height']) || 1,
+            containerWidth: COLUMN_WIDTH,
+            "css-class": resolveResponsiveCssClass(beeBlock),
+        },
+        content: createContent(),
         uid: uuidv4()
     }
 }
@@ -273,7 +396,7 @@ const convertHtmlBlock = (beeBlock: Module): TopolRawBlock => {
 
 const convertSocialBlock = (beeBlock: Module): TopolSocialBlock => {
 
-    //@ts-ignore
+    //@ts-expect-error
     const icons = beeBlock.descriptor.iconsList.icons as BeeSocialIcon[];
 
     const socialBlockElements: TopolSocialElement[] = [];
