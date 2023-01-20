@@ -54,6 +54,28 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
                 blocks.push(block);
             }
         });
+        
+        function getPadding() {
+            let leftPadding = '0px';
+            let rightPadding = '0px';
+            let topPadding = '0px';
+            let bottomPadding = '0px';
+
+            if(column.style["padding-bottom"]) {
+                bottomPadding = column.style["padding-bottom"];
+            }
+            if(column.style["padding-left"]) {
+                leftPadding = column.style["padding-left"];
+            }
+            if(column.style["padding-right"]) {
+                rightPadding = column.style["padding-right"];
+            }
+            if(column.style["padding-top"]) {
+                topPadding = column.style["padding-top"];
+            }
+
+            return `${topPadding} ${rightPadding} ${bottomPadding} ${leftPadding}`;
+        }
 
         return {
             tagName: "mj-column",
@@ -65,6 +87,7 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
                 "border-top": column.style["border-top"],
                 "border-left": column.style["border-left"],
                 "border-right": column.style["border-right"],
+                "padding": getPadding(),
             },
             children: blocks,
             uid: uuidv4()
@@ -138,11 +161,11 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
             attributes: {
                 "full-width": false,
                 "background-color": getBackgroundColor(),
-                padding: "0px 0px 0px 0px",
+                //this will be always 0px, padding is set only on columns
+                padding: "0px 0px 0px 0px", 
                 "css-class": getCssClass(),
                 "background-url": getBackgroundUrl(),
                 // "background-position": row.content.style["background-position"], //TBD
-                // @ts-expect-error
                 "background-size": row.content.style["background-size"],
                 "background-repeat": row.content.style["background-repeat"],
                 "in-group": row.content.computedStyle && !row.content.computedStyle.rowColStackOnMobile
