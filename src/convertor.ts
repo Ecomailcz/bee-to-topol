@@ -146,6 +146,15 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
 
         }
 
+        const isFullWidth = () => {
+
+            if(row.container.style["background-image"] !== undefined && row.container.style["background-image"] !== "none"){
+                return true
+            }
+
+            return false;
+        }
+
         const getBackgroundColor = () => {
             const rowStyleBgColor = row.content.style["background-color"];
 
@@ -159,7 +168,7 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
         return {
             tagName: "mj-section",
             attributes: {
-                "full-width": false,
+                "full-width": isFullWidth(),
                 "background-color": getBackgroundColor(),
                 //this will be always 0px, padding is set only on columns
                 padding: "0px 0px 0px 0px", 
