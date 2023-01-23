@@ -3,7 +3,7 @@ import {
      TopolGifBlock,
     TopolImageBlock, TopolRawBlock, TopolSocialBlock, TopolSocialElement, TopolSpacerBlock,
 } from "./TopolTemplateTypes";
-import {BeeSocialIcon, Module} from "./BeeTemplateTypes";
+import {BeeSocialIcon, ButtonModule, Module} from "./BeeTemplateTypes";
 import {v4 as uuidv4} from 'uuid';
 
 import { convertButtonBlock } from './blocks/button';
@@ -36,7 +36,10 @@ export const convertBlock = (beeBlock: Module, columnWidth: number): { block: To
             block = convertParagraphBlock(beeBlock, COLUMN_WIDTH);
             break;
         case 'mailup-bee-newsletter-modules-button':
-            block = convertButtonBlock(beeBlock, COLUMN_WIDTH);
+
+            if("mailup-bee-newsletter-modules-button" === beeBlock.type) {
+                block = convertButtonBlock(beeBlock as ButtonModule, COLUMN_WIDTH);
+            }
             break;
         case 'mailup-bee-newsletter-modules-video':
             block = convertVideoBlock(beeBlock, COLUMN_WIDTH);

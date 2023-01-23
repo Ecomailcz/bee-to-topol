@@ -90,6 +90,7 @@ export interface TopolButtonBlock extends TopolBlock {
         "containerWidth": number;
         "width"?: number;
         "border"?: string;
+        "line-height"?: number;
         "css-class"?: "hide_on_mobile" | "hide_on_desktop";
     },
     content: string;

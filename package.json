@@ -18,6 +18,7 @@
     "vitest": "^0.26.2"
   },
   "dependencies": {
+    "node-html-parser": "^6.1.4",
     "uuid": "^9.0.0"
   }
 }

@@ -2,37 +2,49 @@
 import {
     TopolButtonBlock,
 } from "../TopolTemplateTypes";
-import { Module} from "../BeeTemplateTypes";
-import {v4 as uuidv4} from 'uuid';
-import { resolveResponsiveCssClass } from "../helpers";
+import { ButtonModule } from "../BeeTemplateTypes";
+import { v4 as uuidv4 } from 'uuid';
+import { resolveResponsiveCssClass, lineHeightPercentToNumeric } from "../helpers";
+import { parse } from 'node-html-parser';
 
-export const convertButtonBlock = (beeBlock: Module, COLUMN_WIDTH: number): TopolButtonBlock => {
+
+const prepareForTopolSupportedHtml = (html: string): string => {
+    const h = parse(html);
+
+    return h.firstChild.childNodes[0].toString().replaceAll("<p", "<div").replaceAll("</p>", "</div>");
+}
+
+export const convertButtonBlock = (beeBlock: ButtonModule, COLUMN_WIDTH: number): TopolButtonBlock => {
+
+    prepareForTopolSupportedHtml(beeBlock.descriptor.button.label);
+
+    const getInnerPadding = () => {
+
+        const top = beeBlock.descriptor.button.style["padding-top"]
+
+        const bottom = beeBlock.descriptor.button.style["padding-bottom"];
+
+        return `${top} ${beeBlock.descriptor.button.style["padding-right"]} ${bottom} ${beeBlock.descriptor.button.style["padding-left"]}`;
+    }
 
     return {
         tagName: "mj-button",
         attributes: {
             "align": beeBlock.descriptor.style["text-align"] || "center",
-            // @ts-expect-error button descriptor not typed
             "background-color": beeBlock.descriptor.button.style['background-color'],
-            // @ts-expect-error button descriptor not typed
             "color": beeBlock.descriptor.button.style['color'],
-            // @ts-expect-error button descriptor not typed
             "border-radius": beeBlock.descriptor.button.style['border-radius'],
-            // @ts-expect-error button descriptor not typed
             "font-size": beeBlock.descriptor.button.style['font-size'],
-            "padding": `${beeBlock.descriptor.style["padding-top"]} ${beeBlock.descriptor.style["padding-right"]} ${beeBlock.descriptor.style["padding-bottom"]} ${beeBlock.descriptor.style["padding-left"]}`,
-            // @ts-expect-error button descriptor not typed
-            "inner-padding": `${beeBlock.descriptor.button.style['padding-top']} ${beeBlock.descriptor.button.style['padding-right']} ${beeBlock.descriptor.button.style['padding-bottom']} ${beeBlock.descriptor.button.style['padding-left']}`,
-            // @ts-expect-error button descriptor not typed
+            "inner-padding": getInnerPadding(), 
+            "padding": `${beeBlock.descriptor.style['padding-top']} ${beeBlock.descriptor.style['padding-right']} ${beeBlock.descriptor.style['padding-bottom']} ${beeBlock.descriptor.style['padding-left']}`,
             "href": `${beeBlock.descriptor.button.href}`,
-            // @ts-expect-error button descriptor not typed
+            "line-height": lineHeightPercentToNumeric(beeBlock.descriptor.button.style['line-height']),
             "border": beeBlock.descriptor.button.style['border-top'],
             "font-family": "Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif",
             "containerWidth": COLUMN_WIDTH,
             "css-class": resolveResponsiveCssClass(beeBlock),
         },
-        // @ts-expect-error button descriptor not typed
-        content: beeBlock.descriptor.button.label,
+        content: prepareForTopolSupportedHtml(beeBlock.descriptor.button.label),
         uid: uuidv4()
     }
 }
