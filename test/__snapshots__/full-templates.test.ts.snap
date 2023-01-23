@@ -3831,7 +3831,7 @@ exports[`match snapshot for 24 hours only template 1`] = `
             "background-size": undefined,
             "background-url": "https://s3.amazonaws.com/cdnimgs.directiq.com/__BeeImages/24-hours-only/90cfbf4c-fa89-47c4-af43-3dd131b2d6e5.png",
             "css-class": undefined,
-            "full-width": true,
+            "full-width": false,
             "in-group": false,
             "padding": "0px 0px 0px 0px",
           },
