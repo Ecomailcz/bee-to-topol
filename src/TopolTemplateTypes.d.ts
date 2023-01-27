@@ -204,10 +204,15 @@ export type TopolTemplate = {
         "containerWidth": number,
         "fonts": string,
         "mj-text": {
-            "line-height": number,
-            "font-size": number
+            "line-height": number;
+            "font-size": number;
+            "font-family"?: string;
         },
-        "mj-button": []
+        "mj-button": {
+            "font-family"?: string;
+            "background-color"?: string;
+            "color"?: string;
+        }
     },
     children: [
         {

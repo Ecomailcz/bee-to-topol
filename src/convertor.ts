@@ -205,27 +205,34 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
         return "transparent";
     }
 
+    const getDefaultFont = () => {
+       return beeTemplate.page.body.content?.style["font-family"] || "Ubuntu, Helvetica, Arial, sans-serif"
+    }
+
     const topolTemplate: TopolTemplate = {
         tagName: "mj-global-style",
         attributes: {
             "h1:color": "#000",
-            "h1:font-family": "Helvetica, sans-serif",
+            "h1:font-family": getDefaultFont(),
             "h2:color": "#000",
-            "h2:font-family": "Ubuntu, Helvetica, Arial, sans-serif",
+            "h2:font-family": getDefaultFont(),
             "h3:color": "#000",
-            "h3:font-family": "Ubuntu, Helvetica, Arial, sans-serif",
+            "h3:font-family": getDefaultFont(),
             ":color": beeTemplate.page.body.content.style.color,
-            ":font-family": beeTemplate.page.body.content.style["font-family"],
+            ":font-family": getDefaultFont(),
             ":line-height": "1.5",
             "a:color": beeTemplate.page.body.content.computedStyle.linkColor,
             "button:background-color": "#e85034",
             "containerWidth": TEMPLATE_WIDTH,
-            "fonts": beeTemplate.page.body.content.style["font-family"],
+            "fonts": getDefaultFont(),
             "mj-text": {
                 "line-height": 1.5,
-                "font-size": 15
+                "font-size": 15,
+                "font-family": getDefaultFont()
             },
-            "mj-button": [],
+            "mj-button": {
+                "font-family": getDefaultFont(),
+            },
         },
         children: [
             {
@@ -240,32 +247,32 @@ export default (beeTemplate: BeeTemplate, options?: convertorOptions) => {
 
         "style": {
             "h1": {
-                "font-family": "\"Cabin\", sans-serif",
+                "font-family": getDefaultFont(),
                 "font-size": "22px"
             },
             "h2": {
                 "font-size": "17px",
-                "font-family": "Ubuntu, Helvetica, Arial"
+                "font-family": getDefaultFont()
             },
             "h3": {
                 "font-size": "13px",
-                "font-family": "Ubuntu, Helvetica, Arial"
+                "font-family": getDefaultFont()
             },
             "p": {
                 "font-size": "11px",
-                "font-family": "Ubuntu, Helvetica, Arial"
+                "font-family": getDefaultFont()
             },
             "ul": {
                 "font-size": "11px",
-                "font-family": "Ubuntu, Helvetica, Arial"
+                "font-family": getDefaultFont()
             },
             "li": {
                 "font-size": "11px",
-                "font-family": "Ubuntu, Helvetica, Arial"
+                "font-family": getDefaultFont()
             },
             "ol": {
                 "font-size": "11px",
-                "font-family": "Ubuntu, Helvetica, Arial"
+                "font-family": getDefaultFont()
             },
             "a": {
                 "color": beeTemplate.page.body.content.computedStyle.linkColor
