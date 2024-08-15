@@ -28,12 +28,12 @@
 
 ### Prerequisites
 
-- Node 16+
+- Node 20+
 
 ### Installation
 
 ```
-npm run install
+pnpm run install
 ```
 
 Create folder `bee-templates` add all your templates to the folder (currently doesn't support folder nesting PR welcomed).
@@ -41,7 +41,7 @@ Create folder `bee-templates` add all your templates to the folder (currently do
 Now run
 
 ```
-npm run convert
+pnpm run convert
 ```
 
 Templates are converted and added to folder topol-templates.
@@ -81,11 +81,11 @@ Nothing at the moment.
 Run tests: mostly snapshot tests, and simple unit tests
 
 ```
-npm run test
+pnpm run test
 ```
 
 Test coverage
 
 ```
-npm run coverage
+pnpm run coverage
 ```
