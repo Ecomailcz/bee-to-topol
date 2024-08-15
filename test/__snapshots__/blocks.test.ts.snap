@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`match snapshot for button template 1`] = `
 {
@@ -74,7 +74,7 @@ exports[`match snapshot for button template 1`] = `
                     "line-height": 1.5,
                     "padding": "20px 20px 20px 20px",
                   },
-                  "content": "<div dir=\\"ltr\\" style=\\"word-break: break-word;\\" data-mce-style=\\"word-break: break-word;\\"><code spellcheck=\\"false\\" data-bee-type=\\"mergetag\\" data-bee-code=\\"\\" data-bee-name=\\"Company City (HubSpot)\\" data-bee-value=\\"{{ site_settings.company_city }}\\"><q>no-content</q></code>&nbsp;Button</div>",
+                  "content": "<div dir="ltr" style="word-break: break-word;" data-mce-style="word-break: break-word;"><code spellcheck="false" data-bee-type="mergetag" data-bee-code="" data-bee-name="Company City (HubSpot)" data-bee-value="{{ site_settings.company_city }}"><q>no-content</q></code>&nbsp;Button</div>",
                   "tagName": "mj-button",
                   "uid": "mocked-uuid",
                 },
